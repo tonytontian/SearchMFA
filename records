@@ -1,0 +1,13 @@
+# for some images, we can not find exact ones until we go to 9th closest.
+
+test similarity by 8000 images.
+codes and results in proof_of_../hash_test.ipynb
+
+## for 5/8 images, we can find cloest
+
+## for 2/8 images, we can find until we go to 9th closest
+
+## for 1/8 images, we cannot find even we go through 9 closest
+### not in database?
+
+# from sorted diff values printed, we can see this method is reliable
