@@ -5,6 +5,9 @@ import axios from 'axios'
 import ReactCrop from "react-image-crop";
 import "react-image-crop/dist/ReactCrop.css";
 
+var BACKEND_IP = "localhost"
+var BACKEND_PORT = "5000"
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -31,7 +34,7 @@ class App extends Component {
     const data = new FormData()
     // data.append('file', this.state.selectedFile)
     data.append('file', this.file_blob);
-    axios.post("http://localhost:5000/upload", data, {
+    axios.post(`http://${BACKEND_IP}:${BACKEND_PORT}/upload`, data, {
         headers: {
           'Access-Control-Allow-Origin': '*',
         }
@@ -40,7 +43,7 @@ class App extends Component {
         console.log(res.statusText)
         let object_id = res["data"]["object_id"];
         this.setState({
-          image_id: `http://localhost:5000/images/${object_id}`
+          image_id: `http://${BACKEND_IP}:${BACKEND_PORT}/images/${object_id}`
         })
       })
   }
