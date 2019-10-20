@@ -1,7 +1,6 @@
 import os, io
-from flask import Flask, flash, request, redirect, url_for, send_from_directory
+from flask import Flask, flash, request, send_from_directory
 from flask_cors import CORS, cross_origin
-from werkzeug.utils import secure_filename
 from pathlib import Path
 from PIL import Image
 from bitarray import bitarray
