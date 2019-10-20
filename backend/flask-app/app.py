@@ -45,4 +45,4 @@ def upload_file():
 def send_image(object_id):
     return send_from_directory('storage/images', '{}.jpg'.format(object_id))
 
-app.run(debug=True)
+app.run(debug=True, host="0.0.0.0")

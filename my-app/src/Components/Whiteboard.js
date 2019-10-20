@@ -5,6 +5,9 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.css'
 import '../CSS/Board.css'
 import Logo from '../searchMFALogo.png'
 import Service from "../Services/Service"
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 export default class className extends Component {
 
@@ -58,24 +61,22 @@ export default class className extends Component {
 
     render(){
         return(
-            <div className="container content-container">
-                <div>"this is a test"</div>
-                <div className="row">
-                    <div className="board left-half">
-                        <UploadBoard  uploadedFile = {this.state.uploadedFile}
-                                      croppedFile = {this.state.croppedFile}
-                                      setUploadedFile = {this.setUploadedFile}
-                                      setFetchedFile = {this.setFetchedFile}
-                        />
-                    </div>
-                    <div className="board right-half">
-                    <InfoBoard  src = {this.state.src} detail = {this.state.detail} setFetchedFile = {this.setFetchedFile}/>
-                    </div>
-
-                </div>
-            </div>
-
-
+            <Container>
+                <Row>
+                    <Col sm>
+                        <UploadBoard
+                            uploadedFile = {this.state.uploadedFile}
+                            croppedFile = {this.state.croppedFile}
+                            setUploadedFile = {this.setUploadedFile}
+                            setFetchedFile = {this.setFetchedFile}/>
+                    </Col>
+                    <Col sm>
+                        <InfoBoard  src = {this.state.src}
+                            detail = {this.state.detail}
+                            setFetchedFile = {this.setFetchedFile}/>
+                    </Col>
+                </Row>
+            </Container>
         )
 
     }

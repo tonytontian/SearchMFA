@@ -106,7 +106,7 @@ export default class className extends Component {
         const data = new FormData()
         // data.append('file', this.state.selectedFile)
         data.append('file', this.file_blob);
-        axios.post("http://localhost:5000/upload", data, {
+        axios.post("http://192.168.43.149:5000/upload", data, {
             headers: {
                 'Access-Control-Allow-Origin': '*',
             }
