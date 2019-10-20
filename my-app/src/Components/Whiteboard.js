@@ -21,6 +21,7 @@ export default class className extends Component {
                     "\n" +
                     "The Museum has undergone significant expansion and change in recent years; 2010 marked the opening of the Art of the Americas Wing, with four levels of American art from ancient to modern. In 2011, the west wing of the Museum was transformed into the Linde Family Wing for Contemporary Art, with new galleries for contemporary art and social and learning spaces. Improved and new galleries for the MFA collections are always opening."
             },
+            croppedFile:null
         }
 
         this.setUploadedFile = this.setUploadedFile.bind(this);
@@ -59,7 +60,7 @@ export default class className extends Component {
                 <div>"this is a test"</div>
                 <div className="row">
                     <div className="board left-half">
-                        <UploadBoard  uploadedFile = {this.state.uploadedFile} setUploadedFile = {this.setUploadedFile}/>
+                        <UploadBoard  uploadedFile = {this.state.uploadedFile} croppedFile = {this.state.croppedFile} setUploadedFile = {this.setUploadedFile} />
                     </div>
                     <div className="board right-half">
                     <InfoBoard  fetchedFile = {this.state.fetchedFile} setFetchedFile = {this.setFetchedFile}/>
