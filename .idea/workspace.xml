@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d066fe6-d368-4206-a7ea-4f95d5e5d3a4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/CSS/Board.css" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/CSS/Board.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/Components/InfoBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Components/InfoBoard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/Components/UploadBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Components/UploadBoard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/Components/Whiteboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Components/Whiteboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/MFACover.png" beforeDir="false" />
-    </list>
+    <list default="true" id="9d066fe6-d368-4206-a7ea-4f95d5e5d3a4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,7 +39,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my-app/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -55,7 +48,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my-app/src/Components/Whiteboard.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-35">
@@ -233,11 +226,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4831000" />
+    <option name="totallyTimeSpent" value="4974000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19349006" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -293,6 +285,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/my-app/src/Components/Whiteboard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-35">
@@ -300,13 +299,6 @@
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
         </state>
       </provider>
     </entry>
