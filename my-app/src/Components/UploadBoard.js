@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import ReactCrop from "react-image-crop";
 import "react-image-crop/dist/ReactCrop.css";
-
+import axios from 'axios'
 export default class className extends Component {
     constructor(props){
         super(props)
@@ -91,13 +91,33 @@ export default class className extends Component {
                     return;
                 }
                 blob.name = fileName;
+                this.file_blob = blob;
                 window.URL.revokeObjectURL(this.fileUrl);
                 this.fileUrl = window.URL.createObjectURL(blob);
                 resolve(this.fileUrl);
             }, "image/jpeg");
         });
 
-        
+
+    }
+
+
+    onClickHandler = () => {
+        const data = new FormData()
+        // data.append('file', this.state.selectedFile)
+        data.append('file', this.file_blob);
+        axios.post("http://localhost:5000/upload", data, {
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+            }
+        }).then(res => {
+            console.log(res)
+            console.log(res.statusText);
+
+            let id = res["data"]["object_id"];
+            let detail = res["data"]["detail"];
+            this.props.setFetchedFile(id, detail);
+        })
     }
 
 
@@ -120,7 +140,16 @@ export default class className extends Component {
                     {/*<input type="file" onChange={this.onSelectFile} />*/}
                 {/*</div>*/}
                     <div>
-                        <input type="file" onChange={this.onSelectFile} />
+
+                        <div className="card">
+                        <img src={this.props.uploadedFile} className="card-img-top"/>
+
+                        <img src={this.props.croppedFile} className="figure-img img-fluid rounded" />
+                        </div>
+
+
+
+                        <input className="btn-secondary btn-block"  type="file" onChange={this.onSelectFile} />
                     </div>
                     {src && (
                         <ReactCrop
@@ -136,6 +165,7 @@ export default class className extends Component {
                         croppedImageUrl && (
                         <img alt="Crop" style={{ maxWidth: "100%" }} src={croppedImageUrl} />
                     )}
+                    <button className="btn-primary btn-block" onClick={this.onClickHandler}>upload</button>
                 </div>
 
         )

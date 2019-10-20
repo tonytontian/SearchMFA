@@ -9,9 +9,9 @@ export default class className extends Component {
         return(
 
             <div className="card">
-                <img src={this.props.fetchedFile.image} className="card-img-top"/>
+                <img src={this.props.src} className="card-img-top"/>
                 <div className="card-body">
-                    <p>{this.props.fetchedFile.info}</p>
+                    <div dangerouslySetInnerHTML = {{__html: this.props.detail}}/>
                 </div>
             </div>
 
