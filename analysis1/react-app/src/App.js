@@ -71,13 +71,13 @@ class App extends Component {
   }
 
   onCropChange = (crop, percentCrop) => {
-    this.setState({crop})
+    this.setState({crop: percentCrop})
   }
 
-  onCropComplete = crop => {
-    console.log(crop)
+  onCropComplete = (crop, percentCrop) => {
+    console.log(percentCrop)
     this.setState({
-      finalCrop: crop,
+      finalCrop: percentCrop,
     })
   }
 
