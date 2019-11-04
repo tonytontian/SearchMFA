@@ -1,0 +1,3 @@
+tfrecords/
+train_dir/
+ckpts/

@@ -4,3 +4,4 @@ __pycache__/
 .vscode/
 .idea/workspace.xml
 node_modules/
+.idea/
