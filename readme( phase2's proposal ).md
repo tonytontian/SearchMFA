@@ -39,4 +39,7 @@ Zhongheng Yang
 
 ## 	Available cropping methods
 
-      We tried some auto-crop library which can give us a result which crops most of white walls, but not the decorative golden painting frame. This suggests us to do our own cropping.
+      We tried some auto-crop library, such as using "convert input -fuzz [percentage]  -trim output" by imagemagick[1], which can give us a result which crops most of white walls, but not the decorative golden painting frame. This suggests us to do our own cropping.
+      
+# references
+[1] imagemagick: https://imagemagick.org/script/convert.php
