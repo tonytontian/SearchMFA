@@ -35,7 +35,7 @@ Zhongheng Yang
 
       Distributions of distance between the photo taken and museum paintings are like the figure below, where we have very few paintings that are close to the photo. So rendering top k paintings is a sensible move.
       
-      ![figure](./figureForPhase2Proposal.png)
+      ![figure](figureForPhase2Proposal.png)
 
 ## 	Available cropping methods
 
