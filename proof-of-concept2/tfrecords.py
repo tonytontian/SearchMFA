@@ -10,19 +10,29 @@ from sklearn.model_selection import train_test_split
 JSON_PATH = '../analysis1/annotation/crop.json'
 IMAGE_PATH = Path('../analysis1/dataset/images')
 
+RESIZE = (300, 300)
+
 OUTPUT_DIR = Path('tfrecords')
-TRAIN_OUTPUT_PATH = str(OUTPUT_DIR / 'train.tfrecord')
-TEST_OUTPUT_PATH  = str(OUTPUT_DIR / 'test.tfrecord')
+TRAIN_OUTPUT_PATH = str(OUTPUT_DIR / 'train_300x300.tfrecord')
+TEST_OUTPUT_PATH  = str(OUTPUT_DIR / 'test_300x300.tfrecord')
 
 def example_info(example):
     filename = example['filename']
     crop = example['l2']
     #
     filepath = IMAGE_PATH / filename
-    with open(filepath, 'rb') as f:
-        encoded_image_data = f.read()
-    with io.BytesIO(encoded_image_data) as f:
-        image = Image.open(f)
+    ori_image = Image.open(filepath)
+    image = ori_image.resize(RESIZE)
+    #
+    with io.BytesIO() as tmp_io:
+        image.save(tmp_io, format='JPEG')
+        tmp_io.seek(0)
+        encoded_image_data = tmp_io.read()
+
+    # with open(filepath, 'rb') as f:
+    #     encoded_image_data = f.read()
+    # with io.BytesIO(encoded_image_data) as f:
+    #     image = Image.open(f)
     #
     width, height = image.size
     xmin = crop['x'] / 100
