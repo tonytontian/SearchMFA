@@ -1,3 +1,5 @@
 tfrecords/
 train_dir/
 ckpts/
+model_dir/
+freeze/
