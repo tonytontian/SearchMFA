@@ -4,7 +4,8 @@ import json
 
 app = Flask(__name__)
 
-CROP_FILE = 'crop.txt'
+# CROP_FILE = 'crop.txt'
+CROP_FILE = 'crop.json'
 
 @app.route('/map', methods=['POST'])
 @cross_origin(origin='*')
@@ -20,7 +21,7 @@ def get_map():
 @cross_origin(origin='*')
 def send_image(img):
     return send_from_directory(
-        '../dataset/images',
+        '../dataset/testing_images',
         img
     )
 
@@ -29,15 +30,21 @@ def send_image(img):
 def get_crop():
     form = request.form
     image = form.get('image')
-    level1 = form.get('level1')
-    level2 = form.get('level2')
-    level3 = form.get('level3')
+    # level1 = form.get('level1')
+    # level2 = form.get('level2')
+    # level3 = form.get('level3')
+    crop = form.get('crop')
+    json_str = json.dumps({
+        'image': image,
+        'crop': crop})
 
     with open(CROP_FILE, 'a') as f:
-        f.write('{},{},{},{}\n'.format(
-            image, level1, level2, level3
-        ))
-    print(image, level1, level2, level3)
+        f.write(json_str + '\n')
+        # f.write('{},{},{},{}\n'.format(
+        #     image, level1, level2, level3
+        # ))
+    # print(image, level1, level2, level3)
+    print(json_str)
 
     return ""
 

@@ -58,12 +58,12 @@ class App extends Component {
     let data = new FormData()
     data.append('image',
       this.state.map[this.state.map_i][0]);
-    data.append('level1', 
+    data.append('crop', 
       JSON.stringify(this.state.level1));
-    data.append('level2',
-      JSON.stringify(this.state.level2));
-    data.append('level3',
-      JSON.stringify(this.state.level3));
+    // data.append('level2',
+    //   JSON.stringify(this.state.level2));
+    // data.append('level3',
+    //   JSON.stringify(this.state.level3));
     axios.post("http://localhost:5000/crop", data, {
     }).then(res => {
       console.log('Finish Upload Levels');
@@ -119,17 +119,18 @@ class App extends Component {
       case this.KEYCODE_A:
         this.onCropLevel(1);
         break
-      case this.KEYCODE_S:
-        this.onCropLevel(2);
-        break
-      case this.KEYCODE_D:
-        this.onCropLevel(3);
-        break
+      // case this.KEYCODE_S:
+      //   this.onCropLevel(2);
+      //   break
+      // case this.KEYCODE_D:
+      //   this.onCropLevel(3);
+      //   break
       case this.KEYCODE_C:
         this.onNextButtonClick();
         break
       case this.KEYCODE_X:
         this.onXKeyDown();
+        break
       default:
         break
     }
